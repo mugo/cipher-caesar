@@ -1,7 +1,5 @@
 package CipherCeaser;
 
-import java.util.Scanner;
-
 public class CipherCaesar {
     // This rotates a character k-positions
 
@@ -24,17 +22,17 @@ public class CipherCaesar {
     public static char cipher(char c, int k) {
         // Declare constants
         final int alphabetLetters = 26;
-        final int cipherShift = k % alphabetLetters;
-        final char asciiShift = Character.isUpperCase(c) ? 'A' : 'a';
+        final int cipherOffset = k % alphabetLetters;
+        final char asciiOffset = Character.isUpperCase(c) ? 'A' : 'a';
 
         // we shift down to 0..25 for a..z
-        char shifted = (char) (c - asciiShift);
+        char offset = (char) (c - asciiOffset);
 
         // Here we rotate the letter and handle "wrap-around" for negatives and value >= 26
-        shifted = (char) ((shifted + cipherShift + alphabetLetters) % alphabetLetters);
+        offset = (char) ((offset + cipherOffset + alphabetLetters) % alphabetLetters);
 
         // Here we shift back up to english characters
-        return (char) (shifted + asciiShift);
+        return (char) (offset + asciiOffset);
     }
 
     // Here we Rotate a string k-positions

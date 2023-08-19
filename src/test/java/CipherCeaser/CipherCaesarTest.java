@@ -3,7 +3,6 @@ import org.junit.*;
 import static org.junit.Assert.*;
 
 public class CipherCaesarTest{
-
     @Test
     public void rotateCharacter_ShiftsCharacterCorrectNumberofTimesAtEndOfAlphabet_char(){
         char input='x';
